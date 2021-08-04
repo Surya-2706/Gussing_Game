@@ -1,0 +1,39 @@
+import random
+
+
+
+def Player_guess(game):
+    
+    
+    random.shuffle(game)
+    
+    guess  = int(input('Enter the Number (0,1 and 2) '))
+    
+    while guess not in [0,1,2]:
+        
+        if guess not in [0,1,2]:
+            
+            guess = int(input('Sorry> Please Enter number (0,1 and 2) '))
+            
+            continue
+        
+    if game[guess] == 'O':
+
+        print('Congratulation. You made it',game)
+        Play_again()
+    else:
+        print('Sorry> Wrong guess')
+        print('Shuffled List',game)
+        Play_again()
+    
+def Play_again():
+    
+    again = input('You want to Play again Y or N').lower()
+    
+    if again == 'y':
+        Player_guess(game)
+    else:
+         print("Nice to meet You")
+
+Player_guess(game = [' ','O',' '])
+
